@@ -1,0 +1,46 @@
+name: Import and adapt pinned Flame vendor
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/import-source.yml, tools/adapt_vendor.py]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: flame-source-import
+  cancel-in-progress: false
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      GIT_LFS_SKIP_SMUDGE: '1'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+          lfs: false
+      - name: Import exact Flame blobs and apply reviewed install ownership fixes
+        env:
+          SOURCE_SHA: a57f01d5642a55250e48b244f51be9322659eeed
+        run: |
+          set -euo pipefail
+          if git cat-file -e HEAD:UPSTREAM_SOURCE.json 2>/dev/null; then
+            echo "Source already imported; no changes made."
+            exit 0
+          fi
+          bootstrap_dir="$(mktemp -d)"
+          cp -a .github tools README.HeckerOS.md "$bootstrap_dir/"
+          git fetch --no-tags --depth=1 https://github.com/Nahida-Prjkt/proprietary_vendor_google_flame.git "$SOURCE_SHA"
+          test "$(git rev-parse FETCH_HEAD)" = "$SOURCE_SHA"
+          git read-tree --reset -u "$SOURCE_SHA^{tree}"
+          git rm -r --ignore-unmatch .github/workflows
+          mkdir -p .github/workflows tools
+          cp "$bootstrap_dir/.github/workflows/import-source.yml" .github/workflows/import-source.yml
+          cp "$bootstrap_dir/tools/adapt_vendor.py" tools/adapt_vendor.py
+          cp "$bootstrap_dir/README.HeckerOS.md" README.HeckerOS.md
+          python3 tools/adapt_vendor.py
+          git diff --exit-code "$SOURCE_SHA" -- proprietary radio .lfsconfig .gitattributes BoardConfigVendor.mk Android.mk
+          git add --all
+          git -c user.name='HeckerOS source import' -c user.email='source-import@heckeros.local' commit -m 'Import Flame vendor and retain Coral camera and FaceID packaging fixes'
+          git -c core.hooksPath=/dev/null push origin HEAD:main
