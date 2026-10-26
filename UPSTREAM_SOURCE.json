@@ -1,0 +1,9 @@
+{
+  "repository": "Nahida-Prjkt/proprietary_vendor_google_flame",
+  "branch": "lineage-24.0",
+  "revision": "a57f01d5642a55250e48b244f51be9322659eeed",
+  "target": "flame",
+  "adaptation": "Coral camera/init and eight FaceID full-install ownership fixes; proprietary bytes unchanged",
+  "rom_features": "Shared with Coral in its-hecker/HeckerOS feat/suite-polish",
+  "coral_reference": "its-hecker/heckeros-coral-vendor@60b0c615e939cd09ce956e6fe6df5d5aa6ccbdd4"
+}
