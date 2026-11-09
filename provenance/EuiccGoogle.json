@@ -1,0 +1,89 @@
+{
+  "package": "com.google.android.euicc",
+  "version_name": "D.2.1.989982212-google",
+  "version_code": 306110,
+  "size_bytes": 18037540,
+  "sha256": "579f75da460e6a6137a1f2b39e603e20999b4f55c2ec1bde51acc4feac1c6760",
+  "signer_sha256": "7e26b6d5802a16799448ad635868f0345d6730310634684c0ae44e7e9f7ea764",
+  "signature_verification": "Android ApkVerifier 8.7.3: verified v3; signer checked against expected Google certificate",
+  "source": {
+    "source": "https://www.transfernow.net/dl/20261108yTFnEmXn",
+    "rom": "HeckerOS_flame-17.0-20261108-mod.zip",
+    "product_manifest_sha256": "89cc846e6a7eb78422f68d9ed48d98973ce76dec322522b7e9bc03b64bf6d024",
+    "downloaded_bytes": 17848753,
+    "method": "Range reads, SHA-256-verified payload operations, exact previously verified APK hash"
+  },
+  "credit": "Natxus0898/hecker_os; APK extracted from the modified Flame ROM shared by the user",
+  "requested_permissions": [
+    "android.permission.ACCESS_NETWORK_STATE",
+    "android.permission.CAMERA",
+    "android.permission.CHANGE_COMPONENT_ENABLED_STATE",
+    "android.permission.CONNECTIVITY_USE_RESTRICTED_NETWORKS",
+    "android.permission.FOREGROUND_SERVICE",
+    "android.permission.FOREGROUND_SERVICE_DATA_SYNC",
+    "android.permission.INTERNET",
+    "android.permission.MANAGE_SUBSCRIPTION_PLANS",
+    "android.permission.MODIFY_PHONE_STATE",
+    "android.permission.POST_NOTIFICATIONS",
+    "android.permission.QUERY_ALL_PACKAGES",
+    "android.permission.READ_NETWORK_USAGE_HISTORY",
+    "android.permission.READ_PRIVILEGED_PHONE_STATE",
+    "android.permission.READ_SUBSCRIPTION_PLANS",
+    "android.permission.REAL_GET_TASKS",
+    "android.permission.REBOOT",
+    "android.permission.RECEIVE_BOOT_COMPLETED",
+    "android.permission.START_ACTIVITIES_FROM_BACKGROUND",
+    "android.permission.START_FOREGROUND_SERVICES_FROM_BACKGROUND",
+    "android.permission.USE_BIOMETRIC",
+    "android.permission.VIBRATE",
+    "android.permission.WRITE_EMBEDDED_SUBSCRIPTIONS",
+    "android.permission.WRITE_SECURE_SETTINGS",
+    "com.android.permission.INSTALL_EXISTING_PACKAGES",
+    "com.android.permission.WRITE_EMBEDDED_SUBSCRIPTIONS",
+    "com.google.android.apps.scone.connectivitymonitor.permission.WRITE_NIMBUS_DATA",
+    "com.google.android.euicc.permission.INTERNAL_BROADCAST",
+    "com.google.android.permission.USE_GRIL",
+    "com.google.android.providers.gsf.permission.READ_GSERVICES",
+    "com.google.android.providers.gsf.permission.READ_GSERVICES",
+    "com.google.android.setupwizard.READ_DEVICE_ORIGIN_FIRST_PARTY",
+    "com.google.android.setupwizard.SETUP_COMPAT_SERVICE",
+    "com.qualcomm.permission.USE_QCRIL_MSG_TUNNEL"
+  ],
+  "required_privileged_permissions": [
+    "android.permission.CHANGE_COMPONENT_ENABLED_STATE",
+    "android.permission.CONNECTIVITY_USE_RESTRICTED_NETWORKS",
+    "android.permission.MANAGE_SUBSCRIPTION_PLANS",
+    "android.permission.MODIFY_PHONE_STATE",
+    "android.permission.READ_NETWORK_USAGE_HISTORY",
+    "android.permission.READ_PRIVILEGED_PHONE_STATE",
+    "android.permission.READ_SUBSCRIPTION_PLANS",
+    "android.permission.REAL_GET_TASKS",
+    "android.permission.REBOOT",
+    "android.permission.START_ACTIVITIES_FROM_BACKGROUND",
+    "android.permission.START_FOREGROUND_SERVICES_FROM_BACKGROUND",
+    "android.permission.WRITE_EMBEDDED_SUBSCRIPTIONS",
+    "android.permission.WRITE_SECURE_SETTINGS",
+    "com.android.permission.INSTALL_EXISTING_PACKAGES"
+  ],
+  "missing_privileged_permissions": [],
+  "allowlists": [
+    "proprietary/product/etc/permissions/privapp-permissions-google-p-lineage.xml",
+    "HeckerOS/configs/privapp-permissions-hecker-euicc.xml"
+  ],
+  "native_libraries": [
+    {
+      "path": "lib/arm64-v8a/libbarhopper_qr_only_jni.so",
+      "stored": true,
+      "data_offset": 7782400,
+      "alignment": 4096
+    },
+    {
+      "path": "lib/armeabi-v7a/libbarhopper_qr_only_jni.so",
+      "stored": true,
+      "data_offset": 7995392,
+      "alignment": 4096
+    }
+  ],
+  "packaging": "Existing presigned/preprocessed privileged product import retained",
+  "validation_limit": "Full ROM build and physical eSIM setup validation pending"
+}
